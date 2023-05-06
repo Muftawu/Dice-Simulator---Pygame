@@ -13,15 +13,22 @@ def main():
 
     while run:
         clock.tick(FPS)
-        win.fill(BLACK)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False 
 
-        # d2.draw_dice()
-        d4.draw_dice()
-        
+        # check for key presses 
+        key_pressed = pygame.key.get_pressed()
+        numbers = [pygame.K_1, pygame.K_2, pygame.K_3, pygame.K_4, pygame.K_5, pygame.K_6]
+        dices = [d1, d2, d3, d4, d5, d6]
+
+        for i in range(len(numbers)):
+            if key_pressed[numbers[i]]:
+                win.fill(BLACK)
+                print(f"Dice {dices[i].dice_number}")
+                dices[i].draw_dice()
+                
         pygame.display.update()
     
 
