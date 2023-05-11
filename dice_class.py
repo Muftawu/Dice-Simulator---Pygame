@@ -4,6 +4,7 @@ pygame.init()
 
 width, height = 500, 400
 win = pygame.display.set_mode((width, height))
+pygame.display.set_caption("Dice Simulator")
 
 # colors 
 GREEN = (0, 255, 0)
